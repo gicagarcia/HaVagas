@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     if(position == 0 || position == 1){
                         anoForm.visibility = View.VISIBLE
+                        anoConclusao.visibility = View.GONE
+                        instEt.visibility = View.GONE
+                        pesquisaLl.visibility = View.GONE
                     }else if (position == 2 || position == 3){
                         anoForm.visibility = View.GONE
                         anoConclusao.visibility = View.VISIBLE
@@ -78,6 +81,25 @@ class MainActivity : AppCompatActivity() {
 
             salvarBt.setOnClickListener{
                 popup()
+            }
+
+            limparBt.setOnClickListener{
+                nomeEt.text.clear()
+                emailEt.text.clear()
+                telefoneEt.text.clear()
+                celularEt.text.clear()
+                formSp.setSelection(0)
+                anoForm.text.clear()
+                anoConclusao.text.clear()
+                instEt.text.clear()
+                anoEt.text.clear()
+                instituicaoEt.text.clear()
+                monografiaEt.text.clear()
+                orientador.text.clear()
+                vagaEt.text.clear()
+                nascimentoEt.text.clear()
+                celularCb.isChecked = false
+                sexoRg.check(masculinoRb.id)
             }
 
         }
