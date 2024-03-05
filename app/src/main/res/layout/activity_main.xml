@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mainTb"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:titleTextColor="@color/design_default_color_on_primary"
+        app:title="Cadastro"
+        android:background="@color/design_default_color_primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nomeEt"
+        android:hint="Nome completo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainTb" />
+
+    <EditText
+        android:id="@+id/emailEt"
+        android:hint="E-mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nomeEt" />
+
+    <CheckBox
+        android:id="@+id/comunicacaoCb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Deseja receber atualizações por e-mail?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailEt" />
+
+    <EditText
+        android:id="@+id/telefoneEt"
+        android:hint="Telefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/comunicacaoCb" />
+
+    <RadioGroup
+        android:id="@+id/telefoneRg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/telefoneEt">
+
+        <RadioButton
+            android:id="@+id/residencialRb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Residencial"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/comercialRb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comercial" />
+
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/celularCb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Informar telefone celular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/telefoneRg" />
+
+    <LinearLayout
+        android:id="@+id/celularLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/celularCb">
+
+        <EditText
+            android:id="@+id/celularEt"
+            android:hint="Celular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/sexoTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sexo"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/celularLl" />
+
+    <RadioGroup
+        android:id="@+id/sexoRg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sexoTv">
+
+        <RadioButton
+            android:id="@+id/masculinoRb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masculino"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/femininoRb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feminino"/>
+
+    </RadioGroup>
+
+
+
+<!--    <Spinner-->
+<!--        android:id="@+id/UFSpinner"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:entries="@array/UFs"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/UFTv"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/salvarBt"-->
+<!--        android:layout_width="187dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="12dp"-->
+<!--        android:text="Salvar"-->
+
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/UFSpinner" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/limparBt"-->
+<!--        android:layout_width="187dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Limpar"-->
+
+<!--        app:layout_constraintEnd_toStartOf="@id/salvarBt"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/UFSpinner" />-->
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
