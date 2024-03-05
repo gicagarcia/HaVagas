@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
+import androidx.appcompat.app.AlertDialog
 import com.example.havagas.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -38,15 +39,45 @@ class MainActivity : AppCompatActivity() {
                     }else if (position == 2 || position == 3){
                         anoForm.visibility = View.GONE
                         anoConclusao.visibility = View.VISIBLE
+                        instEt.visibility = View.VISIBLE
                     }else if (position == 4 || position == 5){
                         anoForm.visibility = View.GONE
                         anoConclusao.visibility = View.GONE
+                        instEt.visibility = View.GONE
                         pesquisaLl.visibility = View.VISIBLE
                     }
 
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {}
+            }
+
+            fun popup(){
+                val alertDialogBuilder = AlertDialog.Builder(root.context)
+
+                var sexo =  if(sexoRg.checkedRadioButtonId == masculinoRb.id )
+                    masculinoRb.text.toString() else femininoRb.text.toString()
+                var msg = """
+                    Nome: ${nomeEt.text}
+                    E-mail: ${emailEt.text}
+                    Telefone: ${telefoneEt.text}
+                    Sexo: $sexo
+                    Data de nascimento: ${nascimentoEt.text}
+                    Formação: ${formSp.selectedItem.toString()}
+                    Vagas: ${vagaEt.text}
+                    """.trimIndent()
+
+                alertDialogBuilder.setTitle("Informações")
+                alertDialogBuilder.setMessage(msg)
+                alertDialogBuilder.setPositiveButton("OK") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                val alertDialog = alertDialogBuilder.create()
+                alertDialog.show()
+            }
+
+            salvarBt.setOnClickListener{
+                popup()
             }
 
         }
