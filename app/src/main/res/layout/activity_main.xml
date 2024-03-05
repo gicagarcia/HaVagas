@@ -12,7 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         app:titleTextColor="@color/design_default_color_on_primary"
         app:title="Cadastro"
-        android:background="@color/design_default_color_primary"
+        android:background="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -150,36 +150,70 @@
 
     </RadioGroup>
 
+    <EditText
+        android:id="@+id/nascimentoEt"
+        android:hint="Data de nascimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sexoRg" />
 
+    <TextView
+        android:id="@+id/formTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Formação"
+        android:textSize="15sp"
+        android:padding="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nascimentoEt"/>
 
-<!--    <Spinner-->
-<!--        android:id="@+id/UFSpinner"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:entries="@array/UFs"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/UFTv"/>-->
+    <Spinner
+        android:id="@+id/formSp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/formacao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/formTv" />
 
-<!--    <Button-->
-<!--        android:id="@+id/salvarBt"-->
-<!--        android:layout_width="187dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginEnd="12dp"-->
-<!--        android:text="Salvar"-->
+    <EditText
+        android:id="@+id/vagaEt"
+        android:hint="Vagas de interesse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/formSp" />
 
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/UFSpinner" />-->
+    <Button
+        android:id="@+id/salvarBt"
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:text="Salvar"
 
-<!--    <Button-->
-<!--        android:id="@+id/limparBt"-->
-<!--        android:layout_width="187dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Limpar"-->
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vagaEt" />
 
-<!--        app:layout_constraintEnd_toStartOf="@id/salvarBt"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/UFSpinner" />-->
+    <Button
+        android:id="@+id/limparBt"
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:text="Limpar"
+
+        app:layout_constraintEnd_toStartOf="@id/salvarBt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vagaEt" />
 
 
 
