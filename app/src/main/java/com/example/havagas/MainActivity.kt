@@ -24,8 +24,31 @@ class MainActivity : AppCompatActivity() {
                 }else{
                     celularLl.visibility = View.GONE
                 }
-
             }
+
+            formSp.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    if(position == 0 || position == 1){
+                        anoForm.visibility = View.VISIBLE
+                    }else if (position == 2 || position == 3){
+                        anoForm.visibility = View.GONE
+                        anoConclusao.visibility = View.VISIBLE
+                    }else if (position == 4 || position == 5){
+                        anoForm.visibility = View.GONE
+                        anoConclusao.visibility = View.GONE
+                        pesquisaLl.visibility = View.VISIBLE
+                    }
+
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {}
+            }
+
         }
     }
 }
